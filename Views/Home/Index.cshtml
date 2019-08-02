@@ -1,0 +1,53 @@
+﻿@model User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register to Your Bank</title>
+</head>
+<body>
+        <h1>Register Below</h1>
+        <br><br>
+        <form asp-action="Create" asp-controller="Home" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="FirstName">First Name</label>
+                        <input asp-for="FirstName" type="text" class="form-control" placeholder="First Name">
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="LastName">Last Name</label>
+                        <input asp-for="LastName" type="text" class="form-control" placeholder="Last Name">
+                        <span asp-validation-for="LastName"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="Email">Email</label>
+                        <input asp-for="Email" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="Password">Password</label>
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+                        <span asp-validation-for="Password"></span>
+                    </div>
+                    <div class="form-row">
+                    <div class="form-group">
+                        <label asp-for="Confirm">Confirm Password</label>
+                        <input asp-for="Confirm" type="password" class="form-control" placeholder="Password">
+                        <span asp-validation-for="Confirm"></span>
+                    </div>
+                </div>
+                <input type="submit" value="Register">
+                
+            </form>
+            <br><br>
+            <a href="Login">Already Have an Account? Login</a>
+    
+</body>
+</html>

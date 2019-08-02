@@ -1,0 +1,49 @@
+@model LoginUser
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h4{
+            margin-left: 75%;
+        }
+
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Welcome @ViewBag.User</h1>
+    <a href="clear">Logout</a>
+    <h4>Current Balance: @ViewBag.Sum</h4>
+    <br><br>
+    @foreach (var trans in ViewBag.list)
+    {
+      <p>@trans.Amount @trans.CreatedAt</p>
+    }
+    <form action="../AddMoney" method="Post">
+      <p>Deposit/Withdraw:<input type="number" name="Amount"></p>
+      <input type="submit" name="Amount" value = "Submit">
+    </form>
+    <br>
+    <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+    
+</body>
+</html>
